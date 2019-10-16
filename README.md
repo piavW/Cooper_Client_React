@@ -1,3 +1,7 @@
+#Cooper Client in React
+Made by: Miyesier Kaerman & Pia von Wachenfelt
+
+# Info from scaffolded app:
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
