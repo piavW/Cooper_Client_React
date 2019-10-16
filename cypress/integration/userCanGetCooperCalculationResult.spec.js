@@ -7,7 +7,7 @@ describe('Cooper Client calculates successfully', () => {
   })
 
   it('displays age', () => {
-    cy.contains('23')
+    cy.contains('23 y/o')
   })
 
   it('displays gender', () => {
