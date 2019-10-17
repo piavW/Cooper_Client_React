@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DisplayCooperResult from './Components/DisplayCooperResult';
 import InputFields from './Components/InputFields';
 import LogInForm from './Components/LogInForm';
+import { authenticate } from './Modules/Auth';
 
 class App extends Component {
   constructor(props) {
