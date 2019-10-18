@@ -5,6 +5,7 @@ import LogInForm from './Components/LogInForm';
 import { authenticate } from './Modules/Auth';
 import DisplayPerformanceData from './Components/DisplayPerformanceData';
 import BMIInputFields from './Components/BMIInputFields';
+import BarGraph from './Components/BarGraphOfCooperResult';
 
 class App extends Component {
   constructor(props) {
@@ -115,6 +116,9 @@ class App extends Component {
         </div>
         <div>
           <BMIInputFields />
+        </div>
+        <div>
+          <BarGraph/>
         </div>
       </>
     );
