@@ -17,7 +17,7 @@ describe('User can save and then retrieve distance data successfully', () => {
       .type('1000')
       cy.get('input[id="distance"]')
       .clear()
-      .type('1500')
+      .type('2500')
       cy.get('input[id="distance"]')
       .clear()
       .type('2000')
@@ -25,14 +25,14 @@ describe('User can save and then retrieve distance data successfully', () => {
       })
 
   it('displays first distance', () => {
-    cy.contains('Poor 1000 meters')
+    cy.contains('Poor, 1000 meters')
   })
 
   it('displays second distance', () => {
-    cy.contains('Below average 1500 meters')
+    cy.contains('Above average, 2500 meters')
   })
 
   it('displays third distance', () => {
-    cy.contains('Average 2000 meters')
+    cy.contains('Average, 2000 meters')
   })
 });
