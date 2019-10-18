@@ -19,7 +19,7 @@ class BMIInputFields extends Component {
     return (
       <>
         <h1>BMI Converter</h1>
-          <select id="method"  method={this.state.method} onChange={this.changeMethod}>
+          <select id="method" method={this.state.method} onChange={this.changeMethod}>
             <option value="metric">metric</option>
             <option value="imperial">imperial</option>
           </select>
