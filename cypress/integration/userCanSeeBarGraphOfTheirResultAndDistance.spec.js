@@ -1,4 +1,4 @@
-describe('User attempts to view their performance data', () => {
+describe('User can view their performance data in graphs', () => {
 
   before(function() {
     cy.visit('http://localhost:3001');
@@ -20,10 +20,17 @@ describe('User attempts to view their performance data', () => {
     cy.contains('Your entry was saved')
   });
 
-  it('user view it successfully', async () => {
+  it('user view bar graph successfully', async () => {
     cy.get('button[id="show-index"]').click()
     cy.contains('.#bar-graph')
-    cy.contains('Poor, 1000 meters')
-    cy.contains('Average, 15000 meters')
+    cy.within('.#bar-graph').contains('1000 meters')
+    cy.within('.#bar-graph').contains('15000 meters')
+  })
+
+  it('user view doughnut graph successfully', async () => {
+    cy.get('button[id="show-index"]').click()
+    cy.contains('.#doughnut-graph')
+    cy.within('.#doughnut-graph').contains('Poor')
+    cy.within('.#doughnut-graph').contains('Average')
   })
 })
