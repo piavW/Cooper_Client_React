@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import DisplayCooperResult from './Components/DisplayCooperResult';
 import InputFields from './Components/InputFields';
 import LogInForm from './Components/LogInForm';
 import { authenticate } from './Modules/Auth';
 import DisplayPerformanceData from './Components/DisplayPerformanceData';
 import BMIInputFields from './Components/BMIInputFields';
+import BarGraph from './Components/BarGraphOfCooperResult';
+import { Card, Container, Header, Icon, Button } from 'semantic-ui-react';
 
 class App extends Component {
   constructor(props) {
@@ -88,7 +90,7 @@ class App extends Component {
     } else {
       renderLogin = (
         <>
-          <button id="login" onClick={() => this.setState({ renderLoginForm: true })}>Login</button>
+          <button  id="login" onClick={() => this.setState({ renderLoginForm: true })}> <Button basic color='black'>Login to save your results </Button> </button>
           <p>{this.state.message}</p>
         </>
       )
@@ -97,25 +99,41 @@ class App extends Component {
 
     return (
       <>
-        <InputFields 
-          inputChangeHandler={this.onChange.bind(this)}
-        />
-
-        <DisplayCooperResult
-          distance={this.state.distance}
-          gender={this.state.gender}
-          age={this.state.age}
-          authenticated={this.state.authenticated}
-          entrySaved={this.state.entrySaved}
-          entryHandler={this.entryHandler.bind(this)}
-        />
-          {performanceDataIndex}
-        <div>
-          {renderLogin}
-        </div>
-        <div>
-          <BMIInputFields />
-        </div>
+        <Header icon textAlign='center' id="header">
+          <Icon name='calculator' circular />
+          <Header.Content>Cooper Test and BMI calculator</Header.Content>
+        </Header>
+    
+        <Card id="card" centered color='black'> 
+            {renderLogin}
+        </Card>
+        
+        <Card.Group centered >
+         <Card id="card" color='black'>
+          <InputFields 
+            inputChangeHandler={this.onChange.bind(this)}
+          />
+          <DisplayCooperResult
+            distance={this.state.distance}
+            gender={this.state.gender}
+            age={this.state.age}
+            authenticated={this.state.authenticated}
+            entrySaved={this.state.entrySaved}
+            entryHandler={this.entryHandler.bind(this)}
+          />
+            {performanceDataIndex}
+          </Card>
+          <Card id="card" color='black'>
+              <BMIInputFields />
+          </Card>
+        </Card.Group>
+          
+        <Card fluid id="card">
+        <Card.Content textAlign='center'>Your Cooper Test distances </Card.Content> 
+          <div >
+            <BarGraph/>
+          </div> 
+        </Card>
       </>
     );
   }

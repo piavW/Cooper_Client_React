@@ -10,8 +10,9 @@ class DisplayCooperResult extends Component {
 
   async saveCooperData() {
     const result = this.calculate();
+    const distanceData = this.props.distance;
     try {
-      await saveData(result);
+      await saveData(result, distanceData);
       this.props.entryHandler();
     } catch(error) {
       console.log(error);
