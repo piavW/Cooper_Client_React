@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import DisplayBMIResult from './DisplayBMIResult'
+import React, { Component } from 'react';
+import DisplayBMIResult from './DisplayBMIResult';
+import { Card } from 'semantic-ui-react';
 
 class BMIInputFields extends Component {
     constructor(props) {
@@ -17,8 +18,8 @@ class BMIInputFields extends Component {
   }
   render() {
     return (
-      <>
-        <h1>BMI Converter</h1>
+      <Card.Content>
+        <h4>BMI Calculator</h4>
           <select id="method" method={this.state.method} onChange={this.changeMethod}>
             <option value="metric">metric</option>
             <option value="imperial">imperial</option>
@@ -36,7 +37,7 @@ class BMIInputFields extends Component {
             height={this.state.height}
             method={this.state.method}
           />
-      </>
+      </Card.Content>
       )
     }
 }

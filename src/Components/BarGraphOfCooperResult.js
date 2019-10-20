@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Bar, Doughnut} from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import { getData } from '../Modules/PerformanceData';
 
 class BarGraph extends Component {
@@ -21,7 +21,6 @@ class BarGraph extends Component {
 
   render() {
     let barGraphData
-    let donutGraphData
     if (this.props.updateIndex === true) {
       this.getPerformanceData();
     }
@@ -29,11 +28,6 @@ class BarGraph extends Component {
       barGraphData = (
         this.state.performanceData.map(item => {
           return `${item.data.distance}`
-        })
-      )
-      donutGraphData = (
-        this.state.performanceData.map(item => {
-          return `${item.data.message}`.to_i
         })
       )
     }
@@ -51,19 +45,9 @@ class BarGraph extends Component {
         }]
     };
 
-    const donutData = {
-      labels: ['Poor', 'Average', 'Above Average', 'Excellent'],
-      datasets: [{
-        data: [donutGraphData],//procentages? get stuff when writing 10, 30 etc
-        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-        hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
-      }]
-    };
-
     return (
       <>
       <div>
-        <h3>Your Cooper Test distances </h3>
         <Bar id="bar-graph"
           data={barData} 
           width={50} 
@@ -73,17 +57,6 @@ class BarGraph extends Component {
           }}
         />
       </div>
-      <div>
-      <h2>Doughnut graph of your Cooper Test result messages</h2>
-      <Doughnut id="doughnut-graph"
-        data={donutData} 
-        width={50} 
-        height={100}
-        options={{
-          maintainAspectRatio: false
-        }}
-        />
-    </div>
     </>
     );
   }

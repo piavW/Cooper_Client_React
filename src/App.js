@@ -6,8 +6,7 @@ import { authenticate } from './Modules/Auth';
 import DisplayPerformanceData from './Components/DisplayPerformanceData';
 import BMIInputFields from './Components/BMIInputFields';
 import BarGraph from './Components/BarGraphOfCooperResult';
-import { Card, Container ,Header,Icon,Button,} from 'semantic-ui-react';
-
+import { Card, Container, Header, Icon, Button } from 'semantic-ui-react';
 
 class App extends Component {
   constructor(props) {
@@ -91,7 +90,7 @@ class App extends Component {
     } else {
       renderLogin = (
         <>
-          <button  id="login" onClick={() => this.setState({ renderLoginForm: true })}> <Button inverted color='black'>Login </Button> </button>
+          <button  id="login" onClick={() => this.setState({ renderLoginForm: true })}> <Button basic color='black'>Login to save your results </Button> </button>
           <p>{this.state.message}</p>
         </>
       )
@@ -99,25 +98,21 @@ class App extends Component {
   }
 
     return (
-       <>
-      {/* //   <Menu > Cooper Test and BMI calculator</Menu> */}
-      <Header as='h' icon textAlign='center'>
-      <Icon name='calculator' circular />
-      <Header.Content>Cooper Test and BMI calculator</Header.Content>
-    </Header>
-  
-    <div class="ui centered card" icon textAlign='center'> 
-          <div>
+      <>
+        <Header icon textAlign='center' id="header">
+          <Icon name='calculator' circular />
+          <Header.Content>Cooper Test and BMI calculator</Header.Content>
+        </Header>
+    
+        <Card centered color='black'> 
             {renderLogin}
-          </div>
-    </div>
-      
-    <div class="ui centered cards"  textAlign='center'>
+        </Card>
+        
+        <Card.Group centered >
          <Card color='black'>
           <InputFields 
             inputChangeHandler={this.onChange.bind(this)}
           />
-
           <DisplayCooperResult
             distance={this.state.distance}
             gender={this.state.gender}
@@ -127,23 +122,20 @@ class App extends Component {
             entryHandler={this.entryHandler.bind(this)}
           />
             {performanceDataIndex}
-        </Card>
-        <Card color='black'>
-          <div>
-            <BMIInputFields />
-          </div>
           </Card>
-       </div>
+          <Card color='black'>
+              <BMIInputFields />
+          </Card>
+        </Card.Group>
           
-          <Container>
-          <div>
+        <Card fluid id="graph">
+        <Card.Content textAlign='center'>Your Cooper Test distances </Card.Content> 
+          <div >
             <BarGraph/>
-          </div>
-        </Container>
+          </div> 
+        </Card>
       </>
     );
-
   }
-  
 }
 export default App;
