@@ -1,5 +1,6 @@
 # Cooper Client in React
 Made by: Miyesier Kaerman & Pia von Wachenfelt
+Deployed as [CooperTest-Pia-Miyesier](https://coopertest-pia-miyesier.netlify.com) [![Netlify Status](https://api.netlify.com/api/v1/badges/1e5cca34-d49d-430b-8da8-4674ab0a2433/deploy-status)](https://app.netlify.com/sites/coopertest-pia-miyesier/deploys)
 
 ## Weekend-Challenge questions:
 1. Where are we doing the calculation? 
@@ -18,7 +19,7 @@ Screenshots of what it looks like:
 
 ## Code & dependencies
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-It uses a home-made [API]() created in Ruby on Rails. [GitHub of the API](https://github.com/piavW/Cooper_API_Challenge)
+It uses a home-made API [Cooper-API-Pia-Miyesier](https://cooper-api-pia-miyesier.herokuapp.com/) created in Ruby on Rails. [GitHub of the API](https://github.com/piavW/Cooper_API_Challenge)
 - Acceptance testing with Cucumber
 - Component testing with Enzyme and Jest
 - Uses yarn for scripts.
