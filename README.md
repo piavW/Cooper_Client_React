@@ -12,6 +12,10 @@ Made by: Miyesier Kaerman & Pia von Wachenfelt
     Positives: users gets results faster than if we were to send and get data from an API. 
     Negatives: data isn't saved automaticly. 
 
+Screenshots of what it looks like:
+![Webpage as visited first time](appScreenshot2.png)
+![Webpage as logged in user when data is filled in](appScreenshot1.png)
+
 ## Code & dependencies
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 It uses a home-made [API]() created in Ruby on Rails. [GitHub of the API](https://github.com/piavW/Cooper_API_Challenge)

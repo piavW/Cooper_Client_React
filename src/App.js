@@ -104,12 +104,12 @@ class App extends Component {
           <Header.Content>Cooper Test and BMI calculator</Header.Content>
         </Header>
     
-        <Card centered color='black'> 
+        <Card id="card" centered color='black'> 
             {renderLogin}
         </Card>
         
         <Card.Group centered >
-         <Card color='black'>
+         <Card id="card" color='black'>
           <InputFields 
             inputChangeHandler={this.onChange.bind(this)}
           />
@@ -123,12 +123,12 @@ class App extends Component {
           />
             {performanceDataIndex}
           </Card>
-          <Card color='black'>
+          <Card id="card" color='black'>
               <BMIInputFields />
           </Card>
         </Card.Group>
           
-        <Card fluid id="graph">
+        <Card fluid id="card">
         <Card.Content textAlign='center'>Your Cooper Test distances </Card.Content> 
           <div >
             <BarGraph/>
